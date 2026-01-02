@@ -1,0 +1,228 @@
+{
+  "designSystem": {
+    "metadata": {
+      "name": "Minimalist Portfolio Design System",
+      "style": "Contemporary minimalist with high contrast",
+      "targetUseCase": "Personal portfolio, professional profiles, case study presentations"
+    },
+    "colorPalette": {
+      "background": {
+        "primary": "#1a1a1a",
+        "description": "Deep charcoal/near-black background"
+      },
+      "text": {
+        "primary": "#ffffff",
+        "secondary": "#a0a0a0",
+        "description": "White for headings, muted gray for body text"
+      },
+      "accent": {
+        "interactive": "#ffffff",
+        "hover": "Underline or subtle brightness increase",
+        "description": "Minimal accent usage, relies on typography and spacing"
+      }
+    },
+    "typography": {
+      "philosophy": "Clean, sans-serif, excellent readability with clear hierarchy",
+      "fontStack": {
+        "primary": "System font stack or modern sans-serif (Inter, SF Pro, Helvetica Neue)",
+        "fallback": "system-ui, -apple-system, sans-serif"
+      },
+      "scale": {
+        "name": "1.5rem to 2rem",
+        "title": "1.25rem to 1.5rem",
+        "subtitle": "0.875rem to 1rem",
+        "body": "0.9rem to 1rem",
+        "description": "Conservative scale with subtle size differences"
+      },
+      "weight": {
+        "name": "600-700 (Semi-bold to Bold)",
+        "headings": "600 (Semi-bold)",
+        "body": "400 (Regular)",
+        "links": "400 (Regular)"
+      },
+      "lineHeight": {
+        "headings": "1.2 to 1.3",
+        "body": "1.6 to 1.7",
+        "description": "Generous line height for readability"
+      },
+      "letterSpacing": {
+        "default": "Normal to slightly loose (-0.01em to 0.01em)",
+        "description": "Minimal letter-spacing adjustments"
+      }
+    },
+    "spacing": {
+      "philosophy": "Generous whitespace, vertical rhythm-focused",
+      "scale": {
+        "xs": "0.5rem (8px)",
+        "sm": "1rem (16px)",
+        "md": "1.5rem (24px)",
+        "lg": "2rem (32px)",
+        "xl": "3rem (48px)",
+        "xxl": "4rem (64px)"
+      },
+      "application": {
+        "sectionGaps": "xl to xxl (48-64px between major sections)",
+        "contentGaps": "md to lg (24-32px between content blocks)",
+        "listItemGaps": "sm (16px between list items)",
+        "paragraphGaps": "md (24px between paragraphs)"
+      },
+      "containerWidth": {
+        "max": "600px to 800px",
+        "description": "Narrow content column for optimal readability"
+      }
+    },
+    "layout": {
+      "structure": "Single column, vertically stacked",
+      "alignment": "Left-aligned text with consistent left margin",
+      "contentFlow": [
+        "Profile header (name, title, avatar)",
+        "About section",
+        "Case studies / Work section",
+        "Connect / Contact section",
+        "Footer"
+      ],
+      "padding": {
+        "mobile": "1.5rem to 2rem (24-32px)",
+        "desktop": "2rem to 3rem (32-48px)"
+      },
+      "positioning": {
+        "content": "Vertically centered or top-aligned with generous top margin",
+        "avatar": "Small circle, positioned above or inline with name"
+      }
+    },
+    "components": {
+      "avatar": {
+        "shape": "Circle",
+        "size": "40px to 60px diameter",
+        "border": "Optional thin white border or none",
+        "positioning": "Above name or inline"
+      },
+      "headings": {
+        "style": "Bold, white, clear hierarchy",
+        "casing": "Sentence case",
+        "spacing": "Generous margin-bottom (16-24px)"
+      },
+      "links": {
+        "default": {
+          "color": "Muted gray (#a0a0a0 to #b0b0b0)",
+          "textDecoration": "Underline",
+          "fontWeight": "400"
+        },
+        "hover": {
+          "color": "Brighter white or slightly lighter gray",
+          "textDecoration": "Underline (maintained)",
+          "transition": "0.2s ease"
+        },
+        "visited": {
+          "color": "Same as default",
+          "description": "No visual distinction for visited links"
+        }
+      },
+      "lists": {
+        "style": "Unstyled, vertical stack",
+        "spacing": "1rem (16px) between items",
+        "indentation": "None or minimal"
+      },
+      "sections": {
+        "separation": "48px to 64px vertical spacing",
+        "headingStyle": "Semi-bold, slightly larger than body",
+        "structure": "Heading followed by content block"
+      },
+      "footer": {
+        "content": "Copyright year, theme toggle",
+        "layout": "Horizontal flex, space-between",
+        "fontSize": "0.875rem",
+        "color": "Muted gray",
+        "spacing": "Large top margin (64px+)"
+      },
+      "themeToggle": {
+        "type": "Text-based toggle (Light/Dark)",
+        "position": "Footer, right-aligned",
+        "activeState": "Underlined or bold",
+        "inactiveState": "Regular weight, gray"
+      }
+    },
+    "interactionPatterns": {
+      "linkHovers": {
+        "type": "Subtle color shift and underline",
+        "transition": "0.2s to 0.3s ease",
+        "colorChange": "Gray to white or brightness increase"
+      },
+      "buttonHovers": {
+        "type": "Minimal - slight opacity or brightness change",
+        "transition": "0.2s ease"
+      },
+      "themeToggle": {
+        "type": "Instant or fade transition (0.3s)",
+        "effect": "Background and text colors invert"
+      },
+      "animations": {
+        "philosophy": "Minimal to none",
+        "usage": "Only for hover states and theme transitions"
+      }
+    },
+    "contentStrategy": {
+      "hierarchy": [
+        "Name and current position (most prominent)",
+        "Specialization statement",
+        "Current work and past experience",
+        "Case studies or portfolio links",
+        "Contact methods"
+      ],
+      "tone": {
+        "style": "Professional, concise, straightforward",
+        "voice": "First person, matter-of-fact",
+        "length": "Brief sentences and paragraphs"
+      },
+      "linkStrategy": {
+        "inline": "Underlined links within sentences",
+        "standalone": "Vertical list of labeled links",
+        "external": "No icons, just underlined text"
+      }
+    },
+    "responsiveStrategy": {
+      "approach": "Mobile-first, single column maintained across breakpoints",
+      "breakpoints": {
+        "mobile": "< 640px",
+        "tablet": "640px - 1024px",
+        "desktop": "> 1024px"
+      },
+      "adjustments": {
+        "mobile": "Reduced padding and font sizes",
+        "tablet": "Slightly increased spacing",
+        "desktop": "Max-width container, increased font sizes and spacing"
+      }
+    },
+    "accessibilityFeatures": {
+      "contrast": "WCAG AAA compliant (white on dark background)",
+      "focusStates": "Visible outline or underline on focus",
+      "semanticHTML": "Proper heading hierarchy, semantic tags",
+      "linkText": "Descriptive link text, no 'click here'",
+      "themeToggle": "Labeled clearly, accessible via keyboard"
+    },
+    "designPrinciples": {
+      "minimalism": "Remove all non-essential elements",
+      "clarity": "Clear visual hierarchy through typography and spacing",
+      "readability": "Optimized line length, generous line height",
+      "consistency": "Uniform spacing scale and typographic rhythm",
+      "elegance": "Sophistication through restraint and precision",
+      "focus": "Content-first, minimal distractions"
+    },
+    "implementationGuidelines": {
+      "cssApproach": "Utility-first (Tailwind) or custom CSS with design tokens",
+      "darkMode": {
+        "default": "Dark theme as primary",
+        "lightMode": "Invert colors: white background, dark text",
+        "implementation": "CSS custom properties or class-based theme switching"
+      },
+      "typography": {
+        "fontLoading": "System fonts for performance, web fonts optional",
+        "fluidTypography": "Optional clamp() for responsive sizing"
+      },
+      "spacing": {
+        "implementation": "CSS custom properties or Tailwind spacing scale",
+        "rhythm": "Consistent vertical rhythm using multiplier of base unit"
+      }
+    }
+  }
+}

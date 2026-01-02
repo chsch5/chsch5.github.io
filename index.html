@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chris Choo | Home </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    :root {
+      --background-primary: #1a1a1a;
+      --background-light: #ffffff;
+      --text-primary: #ffffff;
+      --text-secondary: #a0a0a0;
+      --text-light-primary: #1a1a1a;
+      --text-light-secondary: #4d4d4d;
+      --accent-interactive: #ffffff;
+      --muted-link: #a0a0a0;
+    }
+    body {
+      background: var(--background-primary);
+      color: var(--text-primary);
+      font-size: 1rem;
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+    body.light {
+      background: var(--background-light);
+      color: var(--text-light-primary);
+    }
+    #app {
+      min-height: 100vh;
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 2rem 1.25rem 4.5rem 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+      /* Consistent vertical rhythm */
+    }
+    header {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1.25rem;
+      margin-top: 3.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .avatar {
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #fff;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.09);
+      margin-bottom: 0.6rem;
+      background: #222;
+      display: block;
+    }
+    h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 0.2rem;
+      line-height: 1.2;
+      letter-spacing: 0;
+    }
+    body.light h1 {
+      color: var(--text-light-primary);
+    }
+    .subtitle {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      font-weight: 400;
+      margin-bottom: 0;
+    }
+    body.light .subtitle {
+      color: var(--text-light-secondary);
+    }
+
+    section {
+      margin-bottom: 0;
+      display: flex;
+      flex-direction: column;
+    }
+    section > h2 {
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: var(--text-primary);
+      letter-spacing: 0;
+    }
+    body.light section > h2 {
+      color: var(--text-light-primary);
+    }
+    p, li {
+      color: var(--text-secondary);
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+    body.light p, body.light li {
+      color: var(--text-light-secondary);
+    }
+    ul {
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .links-list {
+      gap: 0.9rem;
+    }
+    a {
+      color: var(--muted-link);
+      text-decoration: underline;
+      font-weight: 400;
+      transition: color 0.2s;
+      outline: none;
+    }
+    a:focus, a:hover {
+      color: var(--accent-interactive);
+      text-decoration-thickness: 2px;
+    }
+    body.light a {
+      color: var(--text-light-secondary);
+    }
+    body.light a:focus,
+    body.light a:hover {
+      color: #2563eb;
+    }
+
+    /* Footer & theme toggle */
+    footer {
+      margin-top: auto;
+      padding-top: 2.5rem;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+
+      /* NEW: stick to edges, align with #app */
+      width: 100vw;
+      position: relative;
+      left: 50%;
+      right: 50%;
+      margin-left: -50vw;
+      margin-right: -50vw;
+      box-sizing: border-box;
+      background: transparent;
+      border: none;
+      /* Remove horizontal scrollbar due to 100vw overflow */
+      /* See next media query for restoration */
+    }
+    .footer-content-wrap {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .footer-bottom-gap {
+      height: 1.25rem;
+      width: 100%;
+      display: block;
+    }
+    body.light footer {
+      color: var(--text-light-secondary);
+    }
+    .theme-toggle {
+      border: none;
+      background: none;
+      color: inherit;
+      font: inherit;
+      cursor: pointer;
+      padding: 0.25rem 0.75rem;
+      border-radius: 100px;
+      border: 1px solid #444;
+      background: rgba(255,255,255,0.01);
+      transition: border 0.2s, background 0.2s;
+    }
+    .theme-toggle:focus {
+      outline: 2px solid #fff;
+      outline-offset: 2px;
+    }
+    body.light .theme-toggle {
+      border: 1px solid #e0e0e0;
+      outline-color: #1a1a1a;
+      background: #f3f7ff;
+    }
+
+    @media (max-width: 680px) {
+      .footer-content-wrap {
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+    }
+    @media (max-width: 640px) {
+      #app {
+        padding-left: 1rem;
+        padding-right: 1rem;
+        gap: 2rem;
+      }
+      header {
+        margin-top: 1.7rem;
+      }
+      footer {
+        padding-top: 2.5rem;
+      }
+      .footer-content-wrap {
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+      .footer-bottom-gap {
+        height: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main id="app">
+    <header>
+      <!-- Optionally add an avatar: replace src if desired -->
+      <img src="cchoo_pfp.jpeg" 
+           alt="Avatar of Chris Choo" class="avatar" />
+      <div>
+        <h1>Chris Choo</h1>
+        <div class="subtitle">Electrical Engineer at <a href="https://serverobotics.com" target="_blank" rel="noopener">serverobotics.com</a></div>
+      </div>
+    </header>
+
+    <section aria-labelledby="about-label">
+      <h2 id="about-label">About</h2>
+      <p>
+        I specialize in turning hardware concepts into products.
+      </p>
+      <p>
+        I currently design at Serve Robotics and previously worked on engineering teams at Infineon and Tesla.
+      </p>
+    </section>
+
+    <section aria-labelledby="case-label">
+      <h2 id="case-label">Projects & Research</h2>
+      <ul>
+        <li>
+          <a 
+            href="https://www.infineon.com/assets/row/public/documents/24/44/infineon-reference-board-ref-48v-2x1kw-asfoc-usermanual-en.pdf?fileId=8ac78c8c93dda25b01955c05a0403d20" 
+            target="_blank" 
+            rel="noopener"
+            >48V 1kW Motor Control Reference Design for AMRs</a>
+        </li>
+        <li>
+          <a 
+            href="https://www.youtube.com/watch?v=K_LsdVC8PcU" 
+            target="_blank" 
+            rel="noopener"
+            >Sensor Inference for Evacuation Path-Planning Proposal</a>
+        </li>
+        <li>
+          <a 
+            href="https://www.youtube.com/watch?v=9g0WkaO5KS0" 
+            target="_blank" 
+            rel="noopener"
+            >Robotics Capstone Project</a>
+        </li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="connect-label">
+      <h2 id="connect-label">Connect</h2>
+      <ul class="links-list">
+        <li>
+          <a href="https://www.linkedin.com/in/chris-choo/" target="_blank" rel="noopener">LinkedIn</a>
+        </li>
+        <li>
+          <a href="mailto:chrischoo222@gmail.com">Email</a>
+        </li>
+      </ul>
+    </section>
+  </main>
+  <footer>
+    <div class="footer-content-wrap">
+      <span id="copyright">&copy; <span id="year"></span> Chris Choo</span>
+      <button class="theme-toggle" id="themeToggle" aria-label="Switch theme (light/dark)">Light mode</button>
+    </div>
+    <div class="footer-bottom-gap"></div>
+  </footer>
+  <script src="script.js"></script>
+  <script>
+    // Set year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Theme toggle logic
+    (function() {
+      const htmlBody = document.body;
+      const toggle = document.getElementById("themeToggle");
+
+      const setMode = mode => {
+        if (mode === "light") {
+          htmlBody.classList.add("light");
+          toggle.textContent = "Dark mode";
+        } else {
+          htmlBody.classList.remove("light");
+          toggle.textContent = "Light mode";
+        }
+      };
+
+      // Persist preference if desired
+      const pref = localStorage.getItem("cc_theme_pref");
+      if (pref === "light" || pref === "dark") {
+        setMode(pref);
+      } else {
+        setMode("dark");
+      }
+
+      toggle.addEventListener("click", function() {
+        const next = htmlBody.classList.contains("light") ? "dark" : "light";
+        setMode(next);
+        localStorage.setItem("cc_theme_pref", next);
+      });
+    })();
+  </script>
+</body>
+</html>
